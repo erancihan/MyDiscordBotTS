@@ -1,0 +1,51 @@
+{
+    "name": "my-discord-bot",
+    "version": "1.0.0",
+    "description": "My Discord Bot",
+    "main": "dist/index.js",
+    "scripts": {
+      "webpack": "webpack",
+      "dev": "npm run build:dev && npm run start:bundle",
+      "dev:tsc": "tsc && node -r dotenv/config dist/index.js dotenv_config_path=.env",
+      "start": "node dist/index.js",
+      "start:bundle": "node -r dotenv/config dist/bundle.js dotenv_config_path=.env",
+      "build": "npm run build:webpack",
+      "build:webpack": "npm run webpack -- --mode production",
+      "build:dev": "npm run webpack -- --mode development"
+    },
+    "keywords": [
+      "discord",
+      "bot"
+    ],
+    "author": "",
+    "dependencies": {
+      "discord.js": "12.5.1",
+      "mongodb": "^3.6.3"
+    },
+    "devDependencies": {
+      "@types/cron": "1.7.2",
+      "@types/mongodb": "^3.6.6",
+      "@types/yargs": "16.0.0",
+      "axios": "0.21.1",
+      "concurrently": "6.0.0",
+      "cron": "1.8.2",
+      "dotenv": "^8.2.0",
+      "husky": "5.1.3",
+      "onchange": "^7.0.2",
+      "prettier": "^2.1.1",
+      "pretty-quick": "^3.1.0",
+      "ts-loader": "^8.0.13",
+      "tslint": "^6.1.3",
+      "typescript": "^4.1.3",
+      "webpack": "5.26.2",
+      "webpack-cli": "^4.3.1",
+      "xmldom": "0.5.0",
+      "yargs": "16.2.0"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "pretty-quick --staged"
+      }
+    }
+  }
+  
